@@ -1,73 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Contact Page</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 20px;
-  }
-  h1 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  .container {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .link-btn {
-    display: block;
-    text-align: center;
-    background: #000;
-    color: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
-  }
-  .link-btn:hover {
-    background: #444;
-  }
-  iframe {
-    width: 100%;
-    border: none;
-    border-radius: 12px;
-  }
-  .map {
-    height: 250px;
-  }
-</style>
+<title>پۆشاکی ئارام خۆشناو</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-100 flex flex-col items-center min-h-screen">
 
-<h1>My Contact Info</h1>
+  <!-- Header -->
+  <header class="w-full max-w-2xl mt-8 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 rounded-2xl shadow-xl text-center p-8">
+    <h1 class="text-4xl font-extrabold text-white drop-shadow-md">پۆشاکی ئارام خۆشناو</h1>
+    <p class="mt-2 text-lg text-white/90">هەمیشە باشترین کوالیتی</p>
+  </header>
 
-<div class="container">
+  <!-- Cards Container -->
+  <div class="mt-10 flex flex-col gap-6 w-full max-w-2xl px-4">
 
-  <!-- TikTok Video 1 -->
-  <iframe src="https://www.tiktok.com/embed/7281753837986927914" height="600" allowfullscreen></iframe>
+    <!-- TikTok 1 -->
+    <a href="https://www.tiktok.com/@meerjaff17?_t=ZS-908Plk28N5L&_r=1" target="_blank" class="flex flex-row-reverse items-center gap-4 bg-white rounded-2xl shadow-lg p-5 hover:scale-105 transition-transform text-right">
+      <i class="fa-brands fa-tiktok text-4xl text-black"></i>
+      <span class="text-xl font-semibold text-gray-900">تیکتۆک @meerjaff17</span>
+    </a>
 
-  <!-- TikTok Video 2 -->
-  <iframe src="https://www.tiktok.com/embed/7269825282760949023" height="600" allowfullscreen></iframe>
+    <!-- TikTok 2 -->
+    <a href="https://www.tiktok.com/@aramxushnaw2?_t=ZS-908PodRDYwC&_r=1" target="_blank" class="flex flex-row-reverse items-center gap-4 bg-white rounded-2xl shadow-lg p-5 hover:scale-105 transition-transform text-right">
+      <i class="fa-brands fa-tiktok text-4xl text-black"></i>
+      <span class="text-xl font-semibold text-gray-900">تیکتۆک @aramxushnaw2</span>
+    </a>
 
-  <!-- Phone Number -->
-  <a class="link-btn" href="tel:+9647712345678">📞 Call Me</a>
+    <!-- Phone -->
+    <a href="tel:+9647507020244" class="flex flex-row-reverse items-center gap-4 bg-green-500 rounded-2xl shadow-lg p-5 hover:scale-105 transition-transform text-right">
+      <i class="fa-solid fa-phone text-4xl text-white"></i>
+      <span class="text-xl font-semibold text-white">پەیوەندی بکە : 07504858045</span>
+    </a>
 
-  <!-- Location Map -->
-  <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243646.22554117867!2d44.3614888!3d36.1911114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400722d5f4aef4c7%3A0xf9d897d2c08e3e52!2sErbil!5e0!3m2!1sen!2siq!4v1695895938274!5m2!1sen!2siq" allowfullscreen></iframe>
+    <!-- Map -->
+    <div class="bg-blue-500 rounded-2xl shadow-lg p-5 hover:scale-105 transition-transform text-right">
+      <div class="flex flex-row-reverse items-center gap-4 mb-4">
+        <i class="fa-solid fa-map-marker-alt text-4xl text-white"></i>
+        <span class="text-xl font-semibold text-white">تاریق بەهەرکا، عێراق</span>
+      </div>
+      <iframe class="w-full h-64 rounded-xl" src="https://www.google.com/maps?q=36.316925,44.033688&hl=es;z=14&output=embed" allowfullscreen="" loading="lazy"></iframe>
+    </div>
 
-</div>
+  </div>
 
 </body>
 </html>
