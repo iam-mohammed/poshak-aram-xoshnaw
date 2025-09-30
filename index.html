@@ -7,43 +7,56 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 flex flex-col items-center min-h-screen">
+<body class="bg-gray-100 flex flex-col items-center min-h-screen px-4">
 
   <!-- Header -->
-  <header class="w-full max-w-2xl mt-8 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 rounded-2xl shadow-xl text-center p-8">
-    <h1 class="text-4xl font-extrabold text-white drop-shadow-md">پۆشاکی ئارام خۆشناو</h1>
-    <p class="mt-2 text-lg text-white/90">هەمیشە باشترین کوالیتی</p>
+  <header class="w-full max-w-2xl mt-8 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 rounded-md shadow-xl text-center p-6">
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-md">پۆشاکی ئارام خۆشناو</h1>
+    <p class="mt-2 text-base sm:text-lg text-white/90">هەمیشە باشترین کوالیتی</p>
   </header>
 
   <!-- Cards Container -->
-  <div class="mt-10 flex flex-col gap-6 w-full max-w-2xl px-4">
+  <div class="mt-8 mb-10 flex flex-col gap-5 w-full max-w-2xl">
+
+    <!-- Phone 1 -->
+    <a href="tel:+9647507020244" 
+       class="flex flex-row-reverse items-center gap-3 bg-green-500 rounded-md shadow-md p-4 hover:scale-105 transition-transform text-right">
+      <i class="fa-solid fa-phone text-2xl text-white"></i>
+      <span class="text-lg sm:text-xl font-semibold text-white">پەیوەندی بکە : 07507020244</span>
+    </a>
 
     <!-- TikTok 1 -->
-    <a href="https://www.tiktok.com/@meerjaff17?_t=ZS-908Plk28N5L&_r=1" target="_blank" class="flex flex-row-reverse items-center gap-4 bg-white rounded-2xl shadow-lg p-5 hover:scale-105 transition-transform text-right">
-      <i class="fa-brands fa-tiktok text-4xl text-black"></i>
-      <span class="text-xl font-semibold text-gray-900">تیکتۆک @meerjaff17</span>
+    <a href="https://www.tiktok.com/@meerjaff17?_t=ZS-908Plk28N5L&_r=1" target="_blank" 
+       class="flex flex-row-reverse items-center gap-3 bg-white rounded-md shadow-md p-4 hover:scale-105 transition-transform text-right">
+      <i class="fa-brands fa-tiktok text-2xl text-black"></i>
+      <span class="text-lg sm:text-xl font-semibold text-gray-900">تیکتۆک @meerjaff17</span>
+    </a>
+
+    <!-- Phone 2 -->
+    <a href="tel:+9647504858045" 
+       class="flex flex-row-reverse items-center gap-3 bg-green-500 rounded-md shadow-md p-4 hover:scale-105 transition-transform text-right">
+      <i class="fa-solid fa-phone text-2xl text-white"></i>
+      <span class="text-lg sm:text-xl font-semibold text-white">پەیوەندی بکە : 07504858045</span>
     </a>
 
     <!-- TikTok 2 -->
-    <a href="https://www.tiktok.com/@aramxushnaw2?_t=ZS-908PodRDYwC&_r=1" target="_blank" class="flex flex-row-reverse items-center gap-4 bg-white rounded-2xl shadow-lg p-5 hover:scale-105 transition-transform text-right">
-      <i class="fa-brands fa-tiktok text-4xl text-black"></i>
-      <span class="text-xl font-semibold text-gray-900">تیکتۆک @aramxushnaw2</span>
+    <a href="https://www.tiktok.com/@aramxushnaw2?_t=ZS-908PodRDYwC&_r=1" target="_blank" 
+       class="flex flex-row-reverse items-center gap-3 bg-white rounded-md shadow-md p-4 hover:scale-105 transition-transform text-right">
+      <i class="fa-brands fa-tiktok text-2xl text-black"></i>
+      <span class="text-lg sm:text-xl font-semibold text-gray-900">تیکتۆک @aramxushnaw2</span>
     </a>
 
-    <!-- Phone -->
-    <a href="tel:+9647507020244" class="flex flex-row-reverse items-center gap-4 bg-green-500 rounded-2xl shadow-lg p-5 hover:scale-105 transition-transform text-right">
-      <i class="fa-solid fa-phone text-4xl text-white"></i>
-      <span class="text-xl font-semibold text-white">پەیوەندی بکە : 07504858045</span>
-    </a>
-
-    <!-- Map -->
-    <div class="bg-blue-500 rounded-2xl shadow-lg p-5 hover:scale-105 transition-transform text-right">
-      <div class="flex flex-row-reverse items-center gap-4 mb-4">
-        <i class="fa-solid fa-map-marker-alt text-4xl text-white"></i>
-        <span class="text-xl font-semibold text-white">تاریق بەهەرکا، عێراق</span>
+    <!-- Map (Visible + Clickable) -->
+    <a href="https://www.google.com/maps?q=36.316925,44.033688" target="_blank" 
+       class="block bg-blue-500 rounded-md shadow-md hover:scale-105 transition-transform text-right overflow-hidden">
+      <div class="flex flex-row-reverse items-center gap-3 p-4">
+        <i class="fa-solid fa-map-marker-alt text-2xl text-white"></i>
+        <span class="text-lg sm:text-xl font-semibold text-white">تاریق بەهەرکا، عێراق</span>
       </div>
-      <iframe class="w-full h-64 rounded-xl" src="https://www.google.com/maps?q=36.316925,44.033688&hl=es;z=14&output=embed" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+      <iframe class="w-full h-56 sm:h-72 pointer-events-none" 
+              src="https://www.google.com/maps?q=36.316925,44.033688&hl=es;z=14&output=embed" 
+              allowfullscreen="" loading="lazy"></iframe>
+    </a>
 
   </div>
 
