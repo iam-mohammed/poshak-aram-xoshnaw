@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وسائل التواصل الاجتماعي والاتصال</title>
+    <title>پۆشاکی ئارام خۆشناو</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -12,14 +12,29 @@
         
         body {
             font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
             min-height: 100vh;
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         
         .card {
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
         }
         
         .social-icon {
@@ -111,18 +126,91 @@
         .contact-card {
             height: 100px;
         }
+        
+        .description-text {
+            background: linear-gradient(90deg, #ffffff, #e0e7ff, #ffffff);
+            background-size: 200% 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s infinite linear;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-animation > * {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .tiktok-card, .contact-card {
+                height: 90px;
+            }
+            
+            .card {
+                margin-bottom: 1rem;
+            }
+            
+            #map {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tiktok-card, .contact-card {
+                height: 85px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
     <!-- Header -->
-    <header class="py-8 px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">تواصل معنا</h1>
-        <p class="text-xl text-white opacity-90 max-w-2xl mx-auto">تابع حساباتنا على تيك توك، اتصل بنا، أو قم بزيارة موقعنا</p>
+    <header class="py-12 px-4 text-center mt-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 fade-in-up">پۆشاکی ئارام خۆشناو</h1>
+        <p class="text-xl md:text-2xl description-text max-w-2xl mx-auto font-medium">
+            هەرزانی لە نرخ، باشترین لە کوالیتی.
+        </p>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+    <main class="flex-grow container mx-auto px-4 py-8 mt-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto stagger-animation">
             <!-- TikTok Card 1 -->
             <div class="card rounded-2xl shadow-xl overflow-hidden transform transition duration-500 hover:scale-105 tiktok-card">
                 <div class="p-4 flex items-center justify-between h-full">
@@ -193,7 +281,7 @@
         </div>
 
         <!-- Map Card -->
-        <div class="mt-8 max-w-4xl mx-auto">
+        <div class="mt-16 max-w-4xl mx-auto fade-in-up" style="animation-delay: 0.5s;">
             <div class="card rounded-2xl shadow-xl overflow-hidden">
                 <div class="p-6">
                     <div class="flex items-center mb-6">
@@ -225,10 +313,10 @@
         </div>
         
         <!-- Stats Section -->
-        <div class="mt-12 max-w-4xl mx-auto">
+        <div class="mt-16 max-w-4xl mx-auto fade-in-up" style="animation-delay: 0.7s;">
             <div class="card rounded-2xl p-6">
                 <h2 class="text-2xl font-bold text-white text-center mb-6">إحصائياتنا على وسائل التواصل</h2>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 stagger-animation">
                     <div class="bg-white bg-opacity-10 rounded-xl p-4 text-center">
                         <div class="text-3xl font-bold text-white">1.2K+</div>
                         <div class="text-white opacity-80">متابعون على تيك توك</div>
@@ -251,9 +339,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 px-4 mt-8">
+    <footer class="py-12 px-4 mt-16">
         <div class="container mx-auto text-center">
-            <div class="flex justify-center space-x-6 mb-6">
+            <div class="flex justify-center space-x-6 mb-6 stagger-animation">
                 <a href="https://www.tiktok.com/@meerjaff17?_t=ZS-908Plk28N5L&_r=1" target="_blank" class="social-icon w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
                     <i class="fab fa-tiktok text-white"></i>
                 </a>
@@ -298,20 +386,6 @@
                     </a>
                 </div>
             `).openPopup();
-            
-            // Add animation to cards on page load
-            const cards = document.querySelectorAll('.card');
-            
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 200 * index);
-            });
             
             // Add click animation to buttons
             const buttons = document.querySelectorAll('.btn');
