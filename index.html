@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پۆشاکی ئارام خۆشناو</title>
+    <title>وسائل التواصل الاجتماعي والاتصال</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
-        
+        /* Use system fonts that support Arabic and Kurdish */
         body {
-            font-family: 'Tajawal', sans-serif;
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans Arabic', 'Tahoma', 'Arial', sans-serif;
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
             min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        /* Ensure proper Arabic/Kurdish text rendering */
+        * {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         @keyframes gradient {
@@ -169,6 +176,13 @@
         .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
         .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
         
+        /* Improved Arabic/Kurdish text styling */
+        .arabic-text {
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans Arabic', 'Tahoma', 'Arial', sans-serif;
+            letter-spacing: 0;
+            word-spacing: normal;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .tiktok-card, .contact-card {
@@ -181,6 +195,14 @@
             
             #map {
                 height: 200px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
             }
         }
         
@@ -196,15 +218,20 @@
             header p {
                 font-size: 1rem;
             }
+            
+            .btn {
+                font-size: 0.75rem;
+                padding: 0.5rem 0.75rem;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col arabic-text">
     <!-- Header -->
     <header class="py-12 px-4 text-center mt-8">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 fade-in-up">پۆشاکی ئارام خۆشناو</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 fade-in-up">تواصل معنا</h1>
         <p class="text-xl md:text-2xl description-text max-w-2xl mx-auto font-medium">
-            هەرزانی لە نرخ، باشترین لە کوالیتی.
+            تابع حساباتنا على تيك توك، اتصل بنا، أو قم بزيارة موقعنا
         </p>
     </header>
 
@@ -376,7 +403,7 @@
             // Add a marker with a popup
             const marker = L.marker([36.316925, 44.033688]).addTo(map);
             marker.bindPopup(`
-                <div class="text-center" dir="rtl">
+                <div class="text-center arabic-text" dir="rtl">
                     <h3 class="font-bold text-lg">موقعنا</h3>
                     <p class="my-2">طريق بحركه، العراق</p>
                     <a href="https://www.google.com/maps?q=36.316925,44.033688" 
